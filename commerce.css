@@ -45,3 +45,5 @@ body{background:#fff9fb}.announcement{background:#8f3559;color:#fff8fb}.announce
 /* Keep batik cup product shots comfortably framed inside catalogue cards */
 .batik-product-card .product-photo img{object-fit:contain;transform:scale(.78);transition:transform .35s ease}.batik-product-card:hover .product-photo img{transform:scale(.82)}
 .bag-button{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border:1px solid #ebc5d4;border-radius:999px;background:#fff1f6;color:#813550;font-size:14px;font-weight:700;box-shadow:0 3px 12px #69354a12;transition:background .2s,transform .2s,box-shadow .2s}.bag-button:hover{background:#ffe2ed;transform:translateY(-1px);box-shadow:0 5px 16px #69354a20}.bag-icon{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.bag-button b{width:27px;height:27px;font-size:11px;background:#a83260;color:white}.bag-link{line-height:1}
+/* Give batik cups a little more breathing room in their large product photos */
+.batik-detail-image-wrap{background:#fff}.batik-detail-image-wrap .detail-image{object-fit:contain;transform:scale(.88)}
