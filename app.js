@@ -4,7 +4,7 @@ const money = value => 'RM ' + Number(value || 0).toFixed(2);
 const $ = selector => document.querySelector(selector);
 const lowestPrice = cake => Math.min(...cake.variants.filter(variant => variant.inStock).map(variant => variant.price));
 let cart = readStore('vcRevampCart', []).filter(item => cakes.some(cake => cake.id === item.id));
-let activeFilter = 'all';
+let activeFilter = new URLSearchParams(location.search).get('category') || 'all';
 
 function readStore(key, fallback) {
   try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; }
@@ -102,7 +102,7 @@ async function submitOrder(event) {
   cart=[];saveCart();$('#done-button').onclick=()=>{$('#checkout-modal').classList.remove('show');$('#checkout-modal').setAttribute('aria-hidden','true');document.body.style.overflow=''};
 }
 
-document.querySelectorAll('.filter').forEach(button=>button.addEventListener('click',()=>{document.querySelector('.filter.active')?.classList.remove('active');button.classList.add('active');activeFilter=button.dataset.filter;drawProducts()}));
+document.querySelectorAll('.filter').forEach(button=>{button.classList.toggle('active',button.dataset.filter===activeFilter);button.addEventListener('click',()=>{document.querySelector('.filter.active')?.classList.remove('active');button.classList.add('active');activeFilter=button.dataset.filter;drawProducts()})});
 $('#catalog-search').addEventListener('input',drawProducts);$('#catalog-sort').addEventListener('change',drawProducts);
 $('.bag-button').addEventListener('click',openCart);$('.close-drawer').addEventListener('click',closeCart);$('#scrim').addEventListener('click',closeCart);$('#checkout-button').addEventListener('click',showCheckout);
 $('.checkout-close').addEventListener('click',()=>{$('#checkout-modal').classList.remove('show');$('#checkout-modal').setAttribute('aria-hidden','true');document.body.style.overflow=''});

@@ -1,16 +1,19 @@
 # Vanilla Crepe Ecommerce Revamp
 
-A responsive storefront concept for Vanilla Crepe. Serve the project folder over HTTP and open `index.html` to explore the catalogue, search and sort flavours, choose a slice or whole-cake size, build a shopping bag, and enter delivery or pickup details.
+A responsive storefront concept for Vanilla Crepe. Open `index.html` for the home page, or use the navigation for the full shop, About, classic and premium collections, delivery, and contact pages.
 
 ## Included in this preview
 
-- 26 products from the public Vanilla Crepe shop catalogue, with product descriptions and one locally downloaded product image per item in `assets/products/`.
-- The live shop's listed slice and whole-cake variants and prices, plus the product names, official logo, and homepage feature image.
-- Classic, premium, and batik categories; quantity controls; search; sorting; and a saved cart.
+- 26 products from the public Vanilla Crepe shop catalogue, with descriptions and locally downloaded product images in `assets/products/`.
+- Listed slice and whole-cake variants and prices, the official logo, and a homepage feature image.
+- Search, category filters, sorting, size selection, cart quantity controls, and a saved browser cart.
 - KL and Selangor delivery and kitchen pickup options, date and time selection, gift notes, and a sample delivery fee estimate.
+- About, delivery, contact, classic, and premium pages, with the official shipping, privacy, terms, and returns policies linked from the footer.
 - A checkout confirmation saved in the current browser only.
 
-The preview does not create a kitchen order, send an email, or charge a customer. Sample delivery fees need approval before launch. Product names, descriptions, variants, and images were collected from the current public [Vanilla Crepe shop](https://www.vanillacrepe.com/).
+Product and brand information was collected from the public [Vanilla Crepe website](https://www.vanillacrepe.com/), including its [About page](https://www.vanillacrepe.com/about-us-mille-crepe/), [delivery page](https://www.vanillacrepe.com/crepe-cake-delivery-kl-selangor/), and [contact page](https://www.vanillacrepe.com/contact-us/).
+
+The preview does not create a kitchen order, send an email, or charge a customer. The sample delivery fee needs approval before launch.
 
 ## To accept live orders and payment
 
