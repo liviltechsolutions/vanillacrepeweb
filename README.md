@@ -1,15 +1,16 @@
 # Vanilla Crepe Ecommerce Revamp
 
-A responsive storefront concept for Vanilla Crepe. Open `index.html` in a browser to explore the catalogue, search and sort flavours, select cake sizes, build a shopping bag, and enter delivery or pickup details.
+A responsive storefront concept for Vanilla Crepe. Serve the project folder over HTTP and open `index.html` to explore the catalogue, search and sort flavours, choose a slice or whole-cake size, build a shopping bag, and enter delivery or pickup details.
 
 ## Included in this preview
 
-- 35 catalogue entries across classic cakes, premium cakes, crepe cups, and batik cups.
-- 8-inch and 10-inch cake sizes where available, quantity controls, and a saved cart.
-- Delivery and kitchen pickup options, date and time selection, gift notes, and a sample delivery fee estimate.
+- 26 products from the public Vanilla Crepe shop catalogue, with product descriptions and one locally downloaded product image per item in `assets/products/`.
+- The live shop's listed slice and whole-cake variants and prices, plus the product names, official logo, and homepage feature image.
+- Classic, premium, and batik categories; quantity controls; search; sorting; and a saved cart.
+- KL and Selangor delivery and kitchen pickup options, date and time selection, gift notes, and a sample delivery fee estimate.
 - A checkout confirmation saved in the current browser only.
 
-The preview does not create a kitchen order, send an email, or charge a customer. Sample prices and delivery fees need approval before launch. Product names and prices were transcribed from the reference menu assets in the workspace and should be confirmed against the current approved menu.
+The preview does not create a kitchen order, send an email, or charge a customer. Sample delivery fees need approval before launch. Product names, descriptions, variants, and images were collected from the current public [Vanilla Crepe shop](https://www.vanillacrepe.com/).
 
 ## To accept live orders and payment
 

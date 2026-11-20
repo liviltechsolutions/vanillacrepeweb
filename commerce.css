@@ -10,6 +10,12 @@
 .product-image.p-menu .product-photo{background-image:url('assets/menu.jpeg');background-size:160% auto}
 .product-image.p-cup .product-photo{background-image:url('assets/cups.jpeg');background-size:cover;background-position:center}
 .product-image.p-batik .product-photo{background-image:url('assets/batik-cups.jpeg');background-size:cover;background-position:center}
+.product-photo{background:none!important}
+.product-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.cart-thumb{overflow:hidden;background:#f1e8df}
+.cart-thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.sold-out-badge{position:absolute;z-index:2;right:12px;top:12px;background:#49352d;color:#fff;padding:7px 9px;font-size:8px;letter-spacing:.1em;text-transform:uppercase}
+.quick-add:disabled{opacity:.45;cursor:not-allowed}
 .cart-thumb.p-menu{background-image:url('assets/menu.jpeg');background-size:160% auto}
 .cart-thumb.p-cup{background-image:url('assets/cups.jpeg');background-size:cover;background-position:center}
 .cart-thumb.p-batik{background-image:url('assets/batik-cups.jpeg');background-size:cover;background-position:center}
@@ -21,6 +27,10 @@
 .order-confirmation div:last-child{border:0}
 .order-confirmation b{color:#49362c}
 .next-step-note{font-size:9px!important;margin-bottom:20px!important}
-.filter[data-filter="cup"],.filter[data-filter="batik"]{white-space:nowrap}
+.filter[data-filter="batik"]{white-space:nowrap}
+.brand-logo{display:block;width:58px;height:58px;object-fit:contain;mix-blend-mode:multiply}
+.footer-brand .brand-logo{width:48px;height:48px}
+footer>span{line-height:1.8}
+footer>span a{color:#624638;white-space:nowrap}
 @media(max-width:900px){.catalog-tools{gap:11px}.search-box{min-width:170px}.size-choice{max-width:100px}}
 @media(max-width:640px){.catalog-tools{display:grid;grid-template-columns:1fr auto;gap:12px;margin:-6px 0 18px}.search-box{grid-column:1/-1;width:100%}.catalog-count{grid-column:1;grid-row:2}.sort-box{grid-column:2;grid-row:2}.section-description{font-size:10px;max-width:320px}.size-choice{max-width:86px;font-size:7px}.product-price small{max-width:100px}.demo-note{font-size:8px}}
