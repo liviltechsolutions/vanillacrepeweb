@@ -49,7 +49,7 @@ function addToCart(id, variantId, quantity = 1) {
   if (existing) existing.qty += quantity;
   else cart.push({id, variantId:variant.id, name:cake.name, size, price:variant.price, qty:quantity, image:cake.image});
   saveCart();
-  showToast(`${cake.name} added to your bag`);
+  showToast(`${cake.name} added to your basket`);
 }
 function saveCart() {
   localStorage.setItem('vcRevampCart', JSON.stringify(cart));
@@ -61,7 +61,7 @@ function drawCart() {
   $('#bag-count').textContent = cartCount();
   $('#drawer-count').textContent = `(${cartCount()})`;
   $('#subtotal').textContent = money(cartSubtotal());
-  $('#cart-items').innerHTML = cart.length ? cart.map((item,index)=>`<div class="cart-line"><div class="cart-thumb"><img src="${safeText(item.image)}" alt="" loading="lazy"></div><div><h3>${safeText(item.name)}</h3><small>${safeText(item.size)} &middot; ${money(item.price)}</small><div class="quantity"><button data-qty="-1" data-index="${index}" aria-label="Decrease quantity">-</button><span>${item.qty}</span><button data-qty="1" data-index="${index}" aria-label="Increase quantity">+</button></div></div><div><div class="line-price">${money(item.price*item.qty)}</div><button class="remove-line" data-remove="${index}">Remove</button></div></div>`).join('') : '<div class="cart-empty"><span>&hearts;</span>Your bag is waiting for<br>a little something lovely.</div>';
+  $('#cart-items').innerHTML = cart.length ? cart.map((item,index)=>`<div class="cart-line"><div class="cart-thumb"><img src="${safeText(item.image)}" alt="" loading="lazy"></div><div><h3>${safeText(item.name)}</h3><small>${safeText(item.size)} &middot; ${money(item.price)}</small><div class="quantity"><button data-qty="-1" data-index="${index}" aria-label="Decrease quantity">-</button><span>${item.qty}</span><button data-qty="1" data-index="${index}" aria-label="Increase quantity">+</button></div></div><div><div class="line-price">${money(item.price*item.qty)}</div><button class="remove-line" data-remove="${index}">Remove</button></div></div>`).join('') : '<div class="cart-empty"><span>&hearts;</span>Your basket is waiting for<br>a little something lovely.</div>';
   document.querySelectorAll('[data-qty]').forEach(button=>button.onclick=()=>{const item=cart[+button.dataset.index];item.qty+=+button.dataset.qty;if(item.qty<1)cart.splice(+button.dataset.index,1);saveCart()});
   document.querySelectorAll('[data-remove]').forEach(button=>button.onclick=()=>{cart.splice(+button.dataset.remove,1);saveCart()});
   $('#checkout-button').disabled = !cart.length;

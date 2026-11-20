@@ -1,4 +1,4 @@
-﻿(() => {
+(() => {
   const cakes = window.VC_PRODUCTS || [];
   const safe = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
   const money = value => 'RM ' + Number(value || 0).toFixed(2);
@@ -18,7 +18,7 @@
   const priceRange = prices.length > 1 ? `${money(prices[0])} – ${money(prices[prices.length-1])}` : money(prices[0] || variants[0]?.price);
   document.title = `${cake.name} | Vanilla Crepe`;
   document.querySelector('#detail-category').textContent = group;
-  root.innerHTML = `<div class="detail-image-wrap"><img class="detail-image" src="${safe(cake.image)}" alt="${safe(cake.name)}"><span class="detail-image-note">HANDCRAFTED IN MALAYSIA</span></div><div class="detail-copy"><div class="kicker"><span class="kicker-line"></span>${safe(group.toUpperCase())}</div><h1>${safe(cake.name)}</h1><p class="detail-desc">${safe(cake.desc)}</p><div class="detail-price" id="detail-price">${priceRange}</div><label class="detail-label" for="detail-variant">Size / portion *</label><select class="detail-select" id="detail-variant" required><option value="">Select slice or whole cake</option>${variants.map(variant=>`<option value="${safe(variant.id)}" ${variant.inStock?'':'disabled'}>${safe(variant.label)} · ${money(variant.price)}${variant.inStock?'':' · Sold out'}</option>`).join('')}</select><p class="portion-hint">Choose a slice or whole cake size before adding it to your bag. Available sizes vary by flavour.</p><label class="detail-label" for="detail-quantity">Quantity</label><div class="detail-quantity"><button type="button" id="quantity-minus" aria-label="Decrease quantity">−</button><input id="detail-quantity" type="number" min="1" max="99" value="1" inputmode="numeric" aria-label="Quantity to add"><button type="button" id="quantity-plus" aria-label="Increase quantity">+</button></div><button class="button button-dark detail-add" id="detail-add" disabled>Add to cart <span>&rarr;</span></button><div class="detail-benefits"><span>♡ Made for sharing</span><span>⌂ KL &amp; Selangor delivery</span></div><a class="detail-delivery-link" href="delivery.html">See delivery information &rarr;</a></div>`;
+  root.innerHTML = `<div class="detail-image-wrap"><img class="detail-image" src="${safe(cake.image)}" alt="${safe(cake.name)}"><span class="detail-image-note">HANDCRAFTED IN MALAYSIA</span></div><div class="detail-copy"><div class="kicker"><span class="kicker-line"></span>${safe(group.toUpperCase())}</div><h1>${safe(cake.name)}</h1><p class="detail-desc">${safe(cake.desc)}</p><div class="detail-price" id="detail-price">${priceRange}</div><label class="detail-label" for="detail-variant">Size / portion *</label><select class="detail-select" id="detail-variant" required><option value="">Select slice or whole cake</option>${variants.map(variant=>`<option value="${safe(variant.id)}" ${variant.inStock?'':'disabled'}>${safe(variant.label)} · ${money(variant.price)}${variant.inStock?'':' · Sold out'}</option>`).join('')}</select><p class="portion-hint">Choose a slice or whole cake size before adding it to your basket. Available sizes vary by flavour.</p><label class="detail-label" for="detail-quantity">Quantity</label><div class="detail-quantity"><button type="button" id="quantity-minus" aria-label="Decrease quantity">−</button><input id="detail-quantity" type="number" min="1" max="99" value="1" inputmode="numeric" aria-label="Quantity to add"><button type="button" id="quantity-plus" aria-label="Increase quantity">+</button></div><button class="button button-dark detail-add" id="detail-add" disabled>Add to cart <span>&rarr;</span></button><div class="detail-benefits"><span>♡ Made for sharing</span><span>⌂ KL &amp; Selangor delivery</span></div><a class="detail-delivery-link" href="delivery.html">See delivery information &rarr;</a></div>`;
   const variantSelect = document.querySelector('#detail-variant');
   const quantity = document.querySelector('#detail-quantity');
   const price = document.querySelector('#detail-price');
@@ -33,7 +33,7 @@
     const cart=readCart();const current=cart.find(item=>item.id===cake.id&&item.variantId===variant.id);
     if(current)current.qty=Math.min(99,Number(current.qty||0)+count);
     else cart.push({id:cake.id,variantId:variant.id,name:cake.name,size:variant.label,price:variant.price,qty:count,image:cake.image});
-    localStorage.setItem('vcRevampCart',JSON.stringify(cart));drawCount();toast(`${count} × ${cake.name} (${variant.label}) added to your bag.`);
+    localStorage.setItem('vcRevampCart',JSON.stringify(cart));drawCount();toast(`${count} × ${cake.name} (${variant.label}) added to your basket.`);
   });
   drawCount();
 })();
