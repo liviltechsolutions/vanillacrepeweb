@@ -6,8 +6,8 @@ A responsive storefront concept for Vanilla Crepe. Open `index.html` for the hom
 
 - 26 products from the public Vanilla Crepe shop catalogue, with descriptions and locally downloaded product images in `assets/products/`.
 - Listed slice and whole-cake variants and prices, the official logo, and a homepage feature image.
-- Search, category filters, sorting, size selection, cart quantity controls, and a saved browser cart.
-- KL and Selangor delivery and kitchen pickup options, date and time selection, gift notes, and a sample delivery fee estimate.
+- Search, category filters, sorting, individual product detail pages, slice / cake-size selection where listed, quantity selection, cart quantity controls, and a saved browser cart.
+- KL and Selangor delivery and kitchen pickup options, customer and recipient details, structured address fields, date and time selection, gift notes, delivery remarks, and a sample delivery fee estimate.
 - About, delivery, contact, classic, and premium pages, with the official shipping, privacy, terms, and returns policies linked from the footer.
 - A checkout confirmation saved in the current browser only.
 
