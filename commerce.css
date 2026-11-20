@@ -78,3 +78,4 @@ body{background:#fff9fb}.announcement{background:#8f3559;color:#fff8fb}.announce
   .cart-drawer{width:100%;padding:24px 18px max(20px,env(safe-area-inset-bottom))}
 }
 @media(max-width:380px){.hero h1{font-size:39px}.hero-buttons{align-items:flex-start}.hero-buttons .button{gap:9px}.head-actions{margin-right:8px}.bag-button{gap:6px;padding:8px 10px;font-size:12px}.bag-icon{width:20px;height:20px}}
+@media(max-width:640px){.hero .hero-copy .hero-note{position:static!important;top:auto!important;left:auto!important;margin:16px 0 0!important;clear:both}}
