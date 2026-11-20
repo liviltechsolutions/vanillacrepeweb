@@ -21,17 +21,21 @@ function drawProducts() {
   $('#product-grid').innerHTML = visible.length ? visible.map(cake => {
     const defaultVariant = cake.variants.filter(variant => variant.inStock).sort((a,b)=>a.price-b.price)[0] || cake.variants[0];
     const allOut = !cake.variants.some(variant => variant.inStock);
-    const variants = cake.variants.length > 1 ? `<small><select class="size-choice" aria-label="Choose size for ${safeText(cake.name)}">${[...cake.variants].sort((a,b)=>a.price-b.price).map(variant => `<option value="${safeText(variant.id)}" ${variant.inStock ? '' : 'disabled'} ${variant.id === defaultVariant.id ? 'selected' : ''}>${safeText(variant.label)} &middot; ${money(variant.price)}${variant.inStock ? '' : ' - Sold out'}</option>`).join('')}</select></small>` : `<small>${safeText(defaultVariant.label)}</small>`;
+    const variantHint = cake.variants.length > 1 ? 'Choose portion on details page' : safeText(defaultVariant.label);
     const category = cake.group === 'premium' ? 'Premium cake' : cake.group === 'batik' ? 'Batik crepe' : 'Classic cake';
     const imagePath = safeText(cake.image);
     const detailUrl = `product.html?id=${encodeURIComponent(cake.id)}`;
-    return `<article class="product-card"><div class="product-image"><a class="product-photo" href="${detailUrl}" aria-label="View ${safeText(cake.name)} details"><img src="${imagePath}" alt="${safeText(cake.name)}" loading="lazy"></a><span class="product-badge">${category}</span>${allOut ? '<span class="sold-out-badge">Sold out</span>' : ''}<button class="quick-add" data-add="${cake.id}" aria-label="Quick add ${safeText(cake.name)} to bag" ${allOut ? 'disabled' : ''}>+</button></div><div class="product-info"><div><h3><a class="product-name-link" href="${detailUrl}">${safeText(cake.name)}</a></h3><p>${safeText(cake.desc)}</p><a class="product-details-link" href="${detailUrl}">View details &amp; sizes <span>&rarr;</span></a></div><div class="product-price">${money(defaultVariant.price)}${variants}</div></div></article>`;
+    return `<article class="product-card" data-detail-url="${detailUrl}"><div class="product-image"><a class="product-photo" href="${detailUrl}" aria-label="View ${safeText(cake.name)} details"><img src="${imagePath}" alt="${safeText(cake.name)}" loading="lazy"></a><span class="product-badge">${category}</span>${allOut ? '<span class="sold-out-badge">Sold out</span>' : ''}<a class="product-view-cta" href="${detailUrl}">View cake details <span>&#8599;</span></a></div><div class="product-info"><div><h3><a class="product-name-link" href="${detailUrl}">${safeText(cake.name)}</a></h3><p>${safeText(cake.desc)}</p><a class="product-details-link" href="${detailUrl}">Choose size &amp; quantity <span>&rarr;</span></a></div><div class="product-price">${money(defaultVariant.price)}<small>${variantHint}</small></div></div></article>`;
   }).join('') : '<div class="no-products">No cakes found. Try another flavour or category.</div>';
   document.querySelectorAll('[data-add]').forEach(button => button.addEventListener('click', () => {
     const cake = cakes.find(item => item.id === button.dataset.add);
     const selectedVariant = button.closest('.product-card').querySelector('.size-choice')?.value || cake.variants[0].id;
     addToCart(button.dataset.add, selectedVariant);
   }));
+document.querySelectorAll('.product-card[data-detail-url]').forEach(card=>card.addEventListener('click',event=>{
+  if(event.target.closest('button,select,input,a'))return;
+  location.href=card.dataset.detailUrl;
+}));
   $('#catalog-count').textContent = `${visible.length} ${visible.length === 1 ? 'treat' : 'treats'}`;
 }
 function addToCart(id, variantId, quantity = 1) {
