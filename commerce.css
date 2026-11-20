@@ -1,0 +1,26 @@
+.section-description{font-size:11px;color:#908075;line-height:1.7;margin:12px 0 0;max-width:470px}
+.catalog-tools{display:flex;align-items:center;gap:18px;margin:-9px 0 22px}
+.search-box{height:37px;border:1px solid #e8dfd7;background:#fffdf9;display:flex;align-items:center;gap:8px;padding:0 11px;min-width:215px}
+.search-box span{font-size:20px;color:#9b877a}
+.search-box input{border:0;outline:0;background:none;font:10px var(--sans);color:#503d32;width:100%}
+.catalog-count{font-size:9px;color:#a18e81;margin-right:auto}
+.sort-box{font-size:9px;color:#9b887b;display:flex;align-items:center;gap:8px}
+.sort-box select,.size-choice{border:0;background:transparent;color:#594338;font:9px var(--sans);outline:0;cursor:pointer}
+.size-choice{max-width:124px;font-size:8px;color:#88756a}
+.product-image.p-menu .product-photo{background-image:url('assets/menu.jpeg');background-size:160% auto}
+.product-image.p-cup .product-photo{background-image:url('assets/cups.jpeg');background-size:cover;background-position:center}
+.product-image.p-batik .product-photo{background-image:url('assets/batik-cups.jpeg');background-size:cover;background-position:center}
+.cart-thumb.p-menu{background-image:url('assets/menu.jpeg');background-size:160% auto}
+.cart-thumb.p-cup{background-image:url('assets/cups.jpeg');background-size:cover;background-position:center}
+.cart-thumb.p-batik{background-image:url('assets/batik-cups.jpeg');background-size:cover;background-position:center}
+.no-products{grid-column:1/-1;padding:46px 12px;text-align:center;color:#948277;font:italic 16px var(--serif)}
+.field-hint{display:block;color:#a18e82;font-size:8px;line-height:1.5;margin-top:5px}
+.demo-note{margin-top:20px;padding:11px 13px;background:#f8efe3;color:#8d725c;font-size:9px;line-height:1.6}
+.order-confirmation{max-width:390px;margin:22px auto;padding:14px 17px;background:#f5eee7;text-align:left}
+.order-confirmation div{display:flex;justify-content:space-between;gap:15px;padding:7px 0;border-bottom:1px solid #e6dbd0;font-size:9px;color:#806f64}
+.order-confirmation div:last-child{border:0}
+.order-confirmation b{color:#49362c}
+.next-step-note{font-size:9px!important;margin-bottom:20px!important}
+.filter[data-filter="cup"],.filter[data-filter="batik"]{white-space:nowrap}
+@media(max-width:900px){.catalog-tools{gap:11px}.search-box{min-width:170px}.size-choice{max-width:100px}}
+@media(max-width:640px){.catalog-tools{display:grid;grid-template-columns:1fr auto;gap:12px;margin:-6px 0 18px}.search-box{grid-column:1/-1;width:100%}.catalog-count{grid-column:1;grid-row:2}.sort-box{grid-column:2;grid-row:2}.section-description{font-size:10px;max-width:320px}.size-choice{max-width:86px;font-size:7px}.product-price small{max-width:100px}.demo-note{font-size:8px}}

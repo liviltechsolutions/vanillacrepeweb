@@ -1,15 +1,18 @@
-# Vanilla Crepe — Ecommerce Revamp
+# Vanilla Crepe Ecommerce Revamp
 
-A responsive, standalone storefront concept for Vanilla Crepe. Open `index.html` in a browser to explore the shop, product filters, size choices, shopping bag, and delivery checkout.
+A responsive storefront concept for Vanilla Crepe. Open `index.html` in a browser to explore the catalogue, search and sort flavours, select cake sizes, build a shopping bag, and enter delivery or pickup details.
 
-## Preview flow
+## Included in this preview
 
-- Browse classic, premium, and little treat categories.
-- Choose 8-inch or 10-inch whole cake sizes, or add a single cup.
-- Update quantities in the bag. The bag is saved in browser local storage.
-- Enter recipient, delivery address, preferred date and time, and optional gift and delivery notes.
-- Select Fiuu as the intended payment provider and review the order summary.
+- 35 catalogue entries across classic cakes, premium cakes, crepe cups, and batik cups.
+- 8-inch and 10-inch cake sizes where available, quantity controls, and a saved cart.
+- Delivery and kitchen pickup options, date and time selection, gift notes, and a sample delivery fee estimate.
+- A checkout confirmation saved in the current browser only.
 
-The final checkout step is a preview only. It does not transmit orders or process payment. The Fiuu options show the intended integration point; production use needs a merchant account, server-side order creation and signature generation, verified payment callbacks, and confirmed delivery fees and service areas. Do not put Fiuu secrets in browser code.
+The preview does not create a kitchen order, send an email, or charge a customer. Sample prices and delivery fees need approval before launch. Product names and prices were transcribed from the reference menu assets in the workspace and should be confirmed against the current approved menu.
 
-The menu imagery is based on the reference menu assets already in the workspace. Product names and prices are sample catalogue content and should be confirmed against the current live menu before launch.
+## To accept live orders and payment
+
+Connect checkout to a trusted order database and implement Fiuu Hosted Payment Page on a server. Keep merchant verification keys server-side, verify Fiuu payment notifications before marking an order paid, and do not trust the customer's return redirect as proof of payment. The credentials, callback domain, delivery rules, and production order storage must be supplied and configured by the business before live checkout can be enabled.
+
+Fiuu's official API specifications and integration notes are linked at [Fiuu API documentation](https://docs.fiuu.dev/reference/official-fiuu-api-specifications).
