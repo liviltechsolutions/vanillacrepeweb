@@ -79,3 +79,5 @@ body{background:#fff9fb}.announcement{background:#8f3559;color:#fff8fb}.announce
 }
 @media(max-width:380px){.hero h1{font-size:39px}.hero-buttons{align-items:flex-start}.hero-buttons .button{gap:9px}.head-actions{margin-right:8px}.bag-button{gap:6px;padding:8px 10px;font-size:12px}.bag-icon{width:20px;height:20px}}
 @media(max-width:640px){.hero .hero-copy .hero-note{position:static!important;top:auto!important;left:auto!important;margin:16px 0 0!important;clear:both}}
+.hero-note{gap:10px}.halal-stamp{width:42px;height:42px;border:0;border-radius:0;color:inherit}.halal-stamp img{display:block;width:100%;height:100%;object-fit:contain}.hero-note b{font-size:10px;letter-spacing:.015em}
+@media(max-width:640px){.hero-note{gap:10px}.halal-stamp{width:38px;height:38px}.hero-note b{font-size:10px}}
